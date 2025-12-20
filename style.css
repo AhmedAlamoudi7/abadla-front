@@ -428,10 +428,6 @@ header.header.container {
     max-width: 300px;
 }
 
-.family-text {
-    max-width: 520px;
-}
-
 .family-text p {
     font-size: 16px;
     line-height: 1.9;
@@ -441,42 +437,13 @@ header.header.container {
     font-size: 17px;
     line-height: 1.9;
     color: #fff;
-        text-align: justify;
-    max-width: 520px;
-    padding: 20px 0;
+    text-align: justify;
 }
 
-/* ✨ حرف البداية الكبير */
-.article-text::first-letter {
-    float: right;                 /* RTL */
-    font-size: 64px;
-    line-height: 1;
-    font-weight: bold;
-    margin-left: 10px;
-    color: #8a1538;               /* لون الهوية */
-    font-family: 'Tajawal', sans-serif;
-}
 
-/* ───── زخرفة بداية المقال */
-.article-text::before {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #8a1538;
-    margin-bottom: 14px;
-}
 
-/* ───── نهاية المقال */
-.article-text::after {
-    content: "✦ ✦ ✦";
-    display: block;
-    text-align: center;
-    margin-top: 22px;
-    font-size: 14px;
-    letter-spacing: 6px;
-    color: #8a1538;
-}
+
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .nav {
