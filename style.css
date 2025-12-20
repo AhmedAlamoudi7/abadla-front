@@ -418,7 +418,7 @@ header.header.container {
 .family-desc-inner {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 200px;
 }
 
 .family-title h2 {
@@ -432,6 +432,7 @@ header.header.container {
     font-size: 16px;
     line-height: 1.9;
 }
+
 .article-text {
     position: relative;
     font-size: 17px;
@@ -458,4 +459,198 @@ header.header.container {
     .family-title h2 {
         font-size: 32px;
     }
+}
+
+
+/* ================= MEDIA SHOWCASE ================= */
+.media-showcase {
+    padding: 80px 0;
+}
+
+/* dark container */
+.media-wrapper {
+    background: #222;
+    border-radius: 26px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* base block */
+.media-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* header */
+.media-head {
+    margin-bottom: 14px;
+}
+
+.media-head h3 {
+    color: #fff;
+    font-family: "Rawasi Display Arabic ExtBd";
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* divider before video title */
+.media-head.divider {
+    position: relative;
+    padding-right: 22px;
+}
+
+.media-head.divider::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 3px;
+    height: 22px;
+    background: #8a1538;
+    right: -11px;
+}
+
+/* ================= ARTICLES ================= */
+.articles-image {
+    position: relative;
+    flex: 1;
+}
+
+.articles-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* small icon bottom-left */
+.img-action {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* ================= VIDEO ================= */
+.video-box {
+    background: #fff;
+    border-radius: 18px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* play icon */
+.play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    border: 2px solid #e6a07c;
+    color: #8a1538;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .media-wrapper {
+        flex-direction: column;
+    }
+}
+
+
+/* ================= ANIMATIONS ================= */
+.media-wrapper {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.media-wrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* hover lift */
+.articles-image img,
+.video-box {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.articles-image img:hover,
+.video-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* play button hover */
+.play-btn {
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    background: rgba(138,21,56,0.08);
+}
+
+/* ================= VIDEO MODAL ================= */
+.video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.video-modal.active {
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+}
+
+.video-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    margin: 5% auto;
+    border-radius: 18px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.video-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* close button */
+.video-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
 }

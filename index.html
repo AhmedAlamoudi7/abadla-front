@@ -1,307 +1,406 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Home Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Reset -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================= TOP ORNAMENT ================= -->
+    <img src="img/image-6.png" class="top-ornament" alt="" />
 
-<!-- ================= TOP ORNAMENT ================= -->
-<img src="img/image-6.png" class="top-ornament" alt="">
-
-<!-- ================= HEADER ================= -->
-<header class="header container">
-    <div class="header-right">
-
+    <!-- ================= HEADER ================= -->
+    <header class="header container">
+      <div class="header-right">
         <nav class="nav">
-            <a href="#">الرئيسية</a>
-            <a href="#">عن العائلة</a>
-            <a href="#">أخبار العائلة</a>
-            <a href="#">إجتماعيات</a>
-            <a href="#">درجات علمية</a>
-            <a href="#">شجرة العائلة</a>
-            <a href="#">مقتنيات</a>
-            <a href="#">الأرشيف</a>
+          <a href="#">الرئيسية</a>
+          <a href="#">عن العائلة</a>
+          <a href="#">أخبار العائلة</a>
+          <a href="#">إجتماعيات</a>
+          <a href="#">درجات علمية</a>
+          <a href="#">شجرة العائلة</a>
+          <a href="#">مقتنيات</a>
+          <a href="#">الأرشيف</a>
         </nav>
 
         <div class="tools">
-            <input class="search" type="text" placeholder="ابحث هنا">
-            <img src="img/globe.svg" class="globe" alt="لغة">
-
+          <input class="search" type="text" placeholder="ابحث هنا" />
+          <img src="img/globe.svg" class="globe" alt="لغة" />
         </div>
+      </div>
+    </header>
 
-    </div>
-</header>
+    <!-- ================= BREAKING ================= -->
+    <div class="breaking container">
+      <span class="badge">آخر الأخبار</span>
 
-<!-- ================= BREAKING ================= -->
-<div class="breaking container">
-    <span class="badge">آخر الأخبار</span>
-
-    <div class="breaking-wrapper">
+      <div class="breaking-wrapper">
         <div class="breaking-track">
-            خبر عاجل ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن …
-            خبر عاجل ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن …
+          خبر عاجل ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن … خبر عاجل
+          ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن …
         </div>
+      </div>
     </div>
-</div>
 
-<!-- ================= BACK ORNAMENT ================= -->
-<img src="img/image-3.png" class="ornament" alt="">
+    <!-- ================= BACK ORNAMENT ================= -->
+    <img src="img/image-3.png" class="ornament" alt="" />
 
-<!-- ================= HERO ================= -->
-<section class="hero container">
-    <div class="hero-image hero-slider">
-
+    <!-- ================= HERO ================= -->
+    <section class="hero container">
+      <div class="hero-image hero-slider">
         <!-- FIXED DATE (ONE DATE ONLY) -->
-        <span class="date">
-            اليوم : الخميس | التاريخ : 20/10/2025 مـ
-        </span>
+        <span class="date"> اليوم : الخميس | التاريخ : 20/10/2025 مـ </span>
 
         <!-- SLIDES -->
-        <img src="img/banner.jpg" class="slide active" loading="lazy" alt="">
-        <img src="img/banner2.jpg" class="slide" loading="lazy" alt="">
-        <img src="img/banner3.jpg" class="slide" loading="lazy" alt="">
+        <img src="img/banner.jpg" class="slide active" loading="lazy" alt="" />
+        <img src="img/banner2.jpg" class="slide" loading="lazy" alt="" />
+        <img src="img/banner3.jpg" class="slide" loading="lazy" alt="" />
 
         <!-- DOTS -->
         <div class="slider-dots"></div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-
-
-<section class="family-events">
-
-    <div class="container">
+    <section class="family-events">
+      <div class="container">
         <!-- slider -->
         <div class="events-row">
+          <div class="event-card active dark">
+            <span class="event-date">2 - 12 ديسمبر 2023</span>
+            <h3>خطة إعمار قطاع غزة</h3>
+            <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
+            <img src="img/event1.jpg" />
+            <a class="event-btn dark"
+              >مشاهدة المزيد
+              <img src="img/arrow-left-dark.svg" class="btn-icon"
+            /></a>
+          </div>
 
+          <button class="arrow right">›</button>
 
-            <div class="event-card active dark">
-                <span class="event-date">2 - 12 ديسمبر 2023</span>
-                <h3>خطة إعمار قطاع غزة</h3>
-                <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
-                <img src="img/event1.jpg">
-                <a class="event-btn dark">مشاهدة المزيد <img src="img/arrow-left-dark.svg" class="btn-icon"></a>
+          <div class="event-card">
+            <span class="event-date">2 - 12 ديسمبر 2023</span>
+            <h3>حفل تكريم طلاب الثانوية</h3>
+            <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
+            <img src="img/event2.jpg" />
+            <a class="event-btn"
+              >مشاهدة المزيد <img src="img/arrow-left.svg" class="btn-icon"
+            /></a>
+          </div>
 
-            </div>
+          <button class="arrow left">‹</button>
 
-            <button class="arrow right">›</button>
-
-            <div class="event-card">
-                <span class="event-date">2 - 12 ديسمبر 2023</span>
-                <h3>حفل تكريم طلاب الثانوية</h3>
-                <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
-                <img src="img/event2.jpg">
-               <a class="event-btn">مشاهدة المزيد <img src="img/arrow-left.svg" class="btn-icon"></a>
-
-            </div>
-
-                <button class="arrow left">‹</button>
-
-            <div class="event-card">
-                <span class="event-date">2 - 12 ديسمبر 2023</span>
-                <h3>مؤتمر التميز التشغيلي</h3>
-                <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
-                <img src="img/event3.jpg">
-                <a class="event-btn">مشاهدة المزيد <img src="img/arrow-left.svg" class="btn-icon"></a>
-            </div>
-
-     
+          <div class="event-card">
+            <span class="event-date">2 - 12 ديسمبر 2023</span>
+            <h3>مؤتمر التميز التشغيلي</h3>
+            <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
+            <img src="img/event3.jpg" />
+            <a class="event-btn"
+              >مشاهدة المزيد <img src="img/arrow-left.svg" class="btn-icon"
+            /></a>
+          </div>
         </div>
 
         <!-- description -->
-    <section class="family-desc">
-        <div class="container family-desc-inner">
 
-                    <div class="family-title">
-                        <h2>تعمـــــــــــــــق
-            وتعرف على أصول
-            العائلة ...</h2>
-                    </div>
+        <section class="family-desc">
+          <div class="container family-desc-inner">
+            <div class="family-title">
+              <h2>تعمـــــــــــــــق وتعرف على أصول العائلة ...</h2>
+            </div>
 
-                    <div class="family-text">
-                        <p class="article-text">
-                        تُعد عائلة (الاسم) واحدة من العائلات التي تركت بصمة واضحة في محيطها الاجتماعي عبر سنوات طويلة. تميّزت العائلة بروابطها المتينة بين أفرادها، حيث يشكّل التعاون، الاحترام، والتكافل أساس العلاقات داخلها. كما تُعرف العائلة بتمسّكها بالقيم الأصيلة التي توارثتها جيلاً بعد جيل، مثل الكرم، حسن الخلق، والالتزام بالمسؤولية تجاه المجتمع.
-            وعلى مر السنوات، برز العديد من أفراد عائلة (الاسم) في مجالات مختلفة مثل التعليم، التجارة، العمل المجتمعي، والإبداع، مما أسهم في تعزيز مكانة العائلة وسمعتها الطيبة. وتحرص العائلة على غرس مبادئ الاجتهاد والطموح في أبنائها، وتشجيعهم على متابعة تعليمهم وتحقيق إنجازاتهم الخاصة.
-            وبفضل حضورها الاجتماعي الإيجابي ومشاركتها الفعّالة في المناسبات والأنشطة، اكتسبت عائلة (الاسم) احترام الجميع، وأصبحت مثالاً للعائلة المتماسكة التي تجمع بين الأصالة والتطور.
-                        </p>
-                    </div>
+            <div class="family-text">
+              <p class="article-text">
+                تُعد عائلة (الاسم) واحدة من العائلات التي تركت بصمة واضحة في
+                محيطها الاجتماعي عبر سنوات طويلة. تميّزت العائلة بروابطها
+                المتينة بين أفرادها، حيث يشكّل التعاون، الاحترام، والتكافل أساس
+                العلاقات داخلها. كما تُعرف العائلة بتمسّكها بالقيم الأصيلة التي
+                توارثتها جيلاً بعد جيل، مثل الكرم، حسن الخلق، والالتزام
+                بالمسؤولية تجاه المجتمع. وعلى مر السنوات، برز العديد من أفراد
+                عائلة (الاسم) في مجالات مختلفة مثل التعليم، التجارة، العمل
+                المجتمعي، والإبداع، مما أسهم في تعزيز مكانة العائلة وسمعتها
+                الطيبة. وتحرص العائلة على غرس مبادئ الاجتهاد والطموح في أبنائها،
+                وتشجيعهم على متابعة تعليمهم وتحقيق إنجازاتهم الخاصة. وبفضل
+                حضورها الاجتماعي الإيجابي ومشاركتها الفعّالة في المناسبات
+                والأنشطة، اكتسبت عائلة (الاسم) احترام الجميع، وأصبحت مثالاً
+                للعائلة المتماسكة التي تجمع بين الأصالة والتطور.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                </div>
+    <section class="media-showcase">
+      <div class="container">
+        <div class="media-wrapper">
+          <!-- ARTICLES -->
+          <div class="media-block articles">
+            <div class="media-head"><h3>مقالات</h3></div>
+            <div class="articles-image">
+              <img src="img/article.jpg" alt="مقالات" />
+            </div>
+          </div>
+          <!-- VIDEO -->
+          <div class="media-block video">
+            <div class="media-head divider"><h3>برومو ومقاطع فيديو</h3></div>
+            <div class="video-box"><span class="play-btn"> ▶ </span></div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
- 
+      </div>
+    </section>
 
 
 
 
-<script>
-            /* slider js */
-        const slider = document.querySelector('.hero-slider');
-        const slides = document.querySelectorAll('.hero-slider .slide');
-        const dotsContainer = document.querySelector('.slider-dots');
 
-        let index = 0;
-        let interval;
-        let startX = 0;
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+    <div class="video-overlay"></div>
 
-        /* create dots */
-        slides.forEach((_, i) => {
-            const dot = document.createElement('span');
-            if (i === 0) dot.classList.add('active');
-            dotsContainer.appendChild(dot);
+    <div class="video-content">
+        <button class="video-close">✕</button>
+
+        <!-- YouTube example -->
+        <iframe
+            id="videoFrame"
+            src=""
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      /* slider js */
+      const slider = document.querySelector(".hero-slider");
+      const slides = document.querySelectorAll(".hero-slider .slide");
+      const dotsContainer = document.querySelector(".slider-dots");
+
+      let index = 0;
+      let interval;
+      let startX = 0;
+
+      /* create dots */
+      slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".slider-dots span");
+
+      function showSlide(i) {
+        slides.forEach((s) => s.classList.remove("active"));
+        dots.forEach((d) => d.classList.remove("active"));
+
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
+      }
+
+      /* autoplay */
+      function startSlider() {
+        interval = setInterval(() => {
+          index = (index + 1) % slides.length;
+          showSlide(index);
+        }, 5000);
+      }
+
+      function stopSlider() {
+        clearInterval(interval);
+      }
+
+      /* hover pause */
+      slider.addEventListener("mouseenter", stopSlider);
+      slider.addEventListener("mouseleave", startSlider);
+
+      /* dots */
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          showSlide(index);
         });
+      });
 
-        const dots = document.querySelectorAll('.slider-dots span');
+      /* swipe mobile */
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
 
-        function showSlide(i) {
-            slides.forEach(s => s.classList.remove('active'));
-            dots.forEach(d => d.classList.remove('active'));
+      slider.addEventListener("touchend", (e) => {
+        const endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) index = (index + 1) % slides.length;
+        if (endX - startX > 50)
+          index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+      });
 
-            slides[i].classList.add('active');
-            dots[i].classList.add('active');
-        }
+      /* init */
+      startSlider();
+    </script>
+    <script>
+      /* ================= EVENTS ARROWS SLIDER ================= */
 
-        /* autoplay */
-        function startSlider() {
-            interval = setInterval(() => {
-                index = (index + 1) % slides.length;
-                showSlide(index);
-            }, 5000);
-        }
+      const eventCards = document.querySelectorAll(".events-row .event-card");
+      const nextArrow = document.querySelector(".arrow.right");
+      const prevArrow = document.querySelector(".arrow.left");
 
-        function stopSlider() {
-            clearInterval(interval);
-        }
+      let currentEvent = 0;
 
-        /* hover pause */
-        slider.addEventListener('mouseenter', stopSlider);
-        slider.addEventListener('mouseleave', startSlider);
+      /* init */
+      updateActiveEvent();
 
-        /* dots */
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                index = i;
-                showSlide(index);
-            });
-        });
-
-        /* swipe mobile */
-        slider.addEventListener('touchstart', e => {
-            startX = e.touches[0].clientX;
-        });
-
-        slider.addEventListener('touchend', e => {
-            const endX = e.changedTouches[0].clientX;
-            if (startX - endX > 50) index = (index + 1) % slides.length;
-            if (endX - startX > 50) index = (index - 1 + slides.length) % slides.length;
-            showSlide(index);
-        });
-
-        /* init */
-        startSlider();
-</script>
-<script>
-        /* ================= EVENTS ARROWS SLIDER ================= */
-
-        const eventCards = document.querySelectorAll('.events-row .event-card');
-        const nextArrow = document.querySelector('.arrow.right');
-        const prevArrow = document.querySelector('.arrow.left');
-
-        let currentEvent = 0;
-
-        /* init */
+      /* next */
+      nextArrow.addEventListener("click", () => {
+        currentEvent = (currentEvent + 1) % eventCards.length;
         updateActiveEvent();
+      });
 
-        /* next */
-        nextArrow.addEventListener('click', () => {
-            currentEvent = (currentEvent + 1) % eventCards.length;
-            updateActiveEvent();
+      /* prev */
+      prevArrow.addEventListener("click", () => {
+        currentEvent =
+          (currentEvent - 1 + eventCards.length) % eventCards.length;
+        updateActiveEvent();
+      });
+
+      /* update function */
+      function updateActiveEvent() {
+        eventCards.forEach((card, index) => {
+          card.classList.remove("active", "dark");
+
+          const btn = card.querySelector(".event-btn");
+          const icon = card.querySelector(".event-btn img");
+
+          if (btn) btn.classList.remove("dark");
+
+          if (index === currentEvent) {
+            card.classList.add("active", "dark");
+
+            if (btn) btn.classList.add("dark");
+
+            /* DARK ICON */
+            if (icon) {
+              icon.src = "img/arrow-left-dark.svg";
+            }
+          } else {
+            /* NORMAL ICON */
+            if (icon) {
+              icon.src = "img/arrow-left.svg";
+            }
+          }
         });
+      }
+    </script>
+    <script>
+      /* ================= REVEAL ANIMATION ================= */
+      const mediaWrapper = document.querySelector(".media-wrapper");
 
-        /* prev */
-        prevArrow.addEventListener('click', () => {
-            currentEvent = (currentEvent - 1 + eventCards.length) % eventCards.length;
-            updateActiveEvent();
-        });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              mediaWrapper.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
 
-        /* update function */
-        function updateActiveEvent() {
-            eventCards.forEach((card, index) => {
-                card.classList.remove('active', 'dark');
+      observer.observe(mediaWrapper);
 
-                const btn = card.querySelector('.event-btn');
-                const icon = card.querySelector('.event-btn img');
+      /* ================= VIDEO MODAL ================= */
+      const playBtn = document.querySelector(".play-btn");
+      const modal = document.getElementById("videoModal");
+      const frame = document.getElementById("videoFrame");
+      const closeBtn = document.querySelector(".video-close");
+      const overlay = document.querySelector(".video-overlay");
 
-                if (btn) btn.classList.remove('dark');
+      /* set your video here */
+      const videoURL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
 
-                if (index === currentEvent) {
-                    card.classList.add('active', 'dark');
+      playBtn.addEventListener("click", () => {
+        frame.src = videoURL;
+        modal.classList.add("active");
+      });
 
-                    if (btn) btn.classList.add('dark');
+      function closeModal() {
+        modal.classList.remove("active");
+        frame.src = ""; // stop video
+      }
 
-                    /* DARK ICON */
-                    if (icon) {
-                        icon.src = 'img/arrow-left-dark.svg';
-                    }
+      closeBtn.addEventListener("click", closeModal);
+      overlay.addEventListener("click", closeModal);
+    </script>
+  <script>
+        /* ================= REVEAL ANIMATION ================= */
+        const mediaWrapper = document.querySelector('.media-wrapper');
 
-                } else {
-                    /* NORMAL ICON */
-                    if (icon) {
-                        icon.src = 'img/arrow-left.svg';
-                    }
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    mediaWrapper.classList.add('show');
                 }
             });
-        }
-</script>
-<script>
-    /* ================= REVEAL ANIMATION ================= */
-    const mediaWrapper = document.querySelector('.media-wrapper');
+        }, { threshold: 0.3 });
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                mediaWrapper.classList.add('show');
-            }
+        observer.observe(mediaWrapper);
+
+        /* ================= VIDEO MODAL ================= */
+        const playBtn = document.querySelector('.play-btn');
+        const modal = document.getElementById('videoModal');
+        const frame = document.getElementById('videoFrame');
+        const closeBtn = document.querySelector('.video-close');
+        const overlay = document.querySelector('.video-overlay');
+
+        /* set your video here */
+        const videoURL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+
+        playBtn.addEventListener('click', () => {
+            frame.src = videoURL;
+            modal.classList.add('active');
         });
-    }, { threshold: 0.3 });
 
-    observer.observe(mediaWrapper);
+        function closeModal() {
+            modal.classList.remove('active');
+            frame.src = ""; // stop video
+        }
 
-    /* ================= VIDEO MODAL ================= */
-    const playBtn = document.querySelector('.play-btn');
-    const modal = document.getElementById('videoModal');
-    const frame = document.getElementById('videoFrame');
-    const closeBtn = document.querySelector('.video-close');
-    const overlay = document.querySelector('.video-overlay');
-
-    /* set your video here */
-    const videoURL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
-
-    playBtn.addEventListener('click', () => {
-        frame.src = videoURL;
-        modal.classList.add('active');
-    });
-
-    function closeModal() {
-        modal.classList.remove('active');
-        frame.src = ""; // stop video
-    }
-
-    closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', closeModal);
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
 </script>
-</body>
+
+  </body>
 </html>
