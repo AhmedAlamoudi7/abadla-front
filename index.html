@@ -163,6 +163,61 @@
     </section>
 
 
+     <!-- Activity Activity -->
+      
+<section class="section-title">
+    <div class="title-wrapper">
+        <span class="line"></span>
+        <h2>تصفح الفعاليات</h2>
+        <span class="line"></span>
+    </div>
+</section>
+
+<div class="activites-row">
+
+
+    <div class="activity-card active">
+        <img  class="activity-img" src="img/event1.jpg">
+        <div class="activity-info">
+            <h3>ملتقى السياحة للتوظيف الأول</h3>
+           <div class="activity-meta">
+                    <span class="activity-date">22–23 مايو 2023</span>
+                    <img src="img/arrow-left.svg" class="activity-arrow">
+            </div>
+        </div>
+    </div>
+    <button class="arrow-activty right">›</button>
+
+    <div class="activity-card">
+        <img class="activity-img" src="img/event2.jpg">
+        <div class="activity-info">
+            <h3>ملتقى السياحة للتوظيف الأول</h3>
+           <div class="activity-meta">
+                    <span class="activity-date">22–23 مايو 2023</span>
+                    <img src="img/arrow-left.svg" class="activity-arrow">
+                </div>
+        </div>
+    </div>
+  <button class="arrow-activty left">‹</button>
+    <div class="activity-card">
+        <img  class="activity-img" src="img/event3.jpg">
+        <div class="activity-info">
+            <h3>ملتقى السياحة للتوظيف الأول</h3>
+            <div class="activity-meta">
+                    <span class="activity-date">22–23 مايو 2023</span>
+                    <img src="img/arrow-left.svg" class="activity-arrow">
+                </div>
+        </div>
+    </div>
+
+  
+
+</div>
+
+ 
+
+
+
       </div>
     </section>
 
@@ -400,6 +455,31 @@
 
         closeBtn.addEventListener('click', closeModal);
         overlay.addEventListener('click', closeModal);
+</script>
+
+<script>
+          /* ================= ACTIVITY SLIDER ================= */
+          const cards = document.querySelectorAll(".activity-card");
+          const nextBtn = document.querySelector(".arrow-activty.right");
+          const prevBtn = document.querySelector(".arrow-activty.left");
+
+          let current = 0;
+
+          function updateSlider() {
+              cards.forEach((card, i) => {
+                  card.classList.toggle("active", i === current);
+              });
+          }
+
+          nextBtn.onclick = () => {
+              current = (current + 1) % cards.length;
+              updateSlider();
+          };
+
+          prevBtn.onclick = () => {
+              current = (current - 1 + cards.length) % cards.length;
+              updateSlider();
+          };
 </script>
 
   </body>
