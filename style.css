@@ -841,3 +841,122 @@ header.header.container {
         flex-direction: column;
     }
 }
+
+/* ================= FAMILY STATS ================= */
+.family-stats {
+    background: #ffffff;
+    padding: 80px 0 100px;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* title */
+.stats-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #8a1538;
+    font-family: "Rawasi Display Arabic ExtBd", "Tajawal", sans-serif;
+    font-weight: 1000;
+    font-size: 40px;
+    font-style: normal;
+    line-height: 50px; /* 119.048% */
+}
+
+/* ================= TOP GRID ================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f0f0f0 100%
+    );
+    border-radius: 20px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    border: 1px solid #d0d0d0;
+}
+
+.stat-label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 42px;
+    font-style: normal;
+    line-height: 50px; /* 119.048% */
+    color: #222;
+    font-weight: 800;
+}
+
+.stat-number {
+    font-size: 57px;
+    font-weight: 800;
+    color: #8a1538;
+}
+
+/* ================= BOTTOM WIDE ================= */
+.stats-wide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.wide-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ededed 100%
+    );
+    border-radius: 22px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    border: 1px solid #d0d0d0;
+}
+
+.wide-label {
+    display: block;    
+    color: #8a1538;
+    margin-bottom: 18px;
+    font-weight: 800;
+    font-size: 42px;
+    font-style: normal;
+    line-height: 50px; /* 119.048% */
+}
+
+.wide-value {
+    font-size: 32px;
+    color: #222;
+    font-weight: 800;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-wide {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .wide-value {
+        font-size: 26px;
+    }
+}

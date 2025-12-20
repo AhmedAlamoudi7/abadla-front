@@ -221,7 +221,52 @@
       </div>
     </section>
 
+<section class="family-stats">
+    <div class="container">
 
+        <h2 class="stats-title">إحصائيات العائلة</h2>
+
+        <!-- top stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">إجمالي الإناث</span>
+                <span class="stat-number" data-target="54800">0</span>
+
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">إجمالي الذكور</span>
+                <span class="stat-number" data-target="66200">0</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">على قيد الحياة</span>
+                <span class="stat-number" data-target="12230">0</span>
+
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">إجمالي عدد الأفراد</span>
+                <span class="stat-number" data-target="16500">0</span>
+
+            </div>
+        </div>
+
+        <!-- bottom stats -->
+        <div class="stats-wide">
+            <div class="wide-card">
+                <span class="wide-label">أكبر فرع</span>
+                <span class="wide-value">اســــم الفــــــــــــرع</span>
+            </div>
+
+            <div class="wide-card">
+                <span class="wide-label">أكبر فرع</span>
+                <span class="wide-value">اســــم الفــــــــــــرع</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
 
@@ -482,5 +527,51 @@
           };
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
+    const speed = 120; // كلما قلّ الرقم زادت السرعة
+
+    const formatNumber = (num) => {
+        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
+    const runCounter = (counter) => {
+        const target = +counter.dataset.target;
+        let current = 0;
+
+        const increment = target / speed;
+
+        const update = () => {
+            current += increment;
+
+            if (current < target) {
+                counter.innerText = formatNumber(Math.floor(current));
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = formatNumber(target);
+            }
+        };
+
+        update();
+    };
+
+    /* Observer لتشغيل الأنيميشن عند الظهور */
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    obs.unobserve(entry.target); // تشغيل مرة واحدة
+                }
+            });
+        },
+        { threshold: 0.6 }
+    );
+
+    counters.forEach(counter => observer.observe(counter));
+});
+</script>
   </body>
 </html>
