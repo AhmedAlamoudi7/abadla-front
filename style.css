@@ -827,7 +827,7 @@ header.header.container {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: #fff;
+    background: hsla(0, 0%, 4%, 1.00);
     color: #8a1538;
     border: none;
     font-size: 26px;
@@ -922,6 +922,7 @@ header.header.container {
     text-align: center;
     box-shadow: 0 12px 30px rgba(0,0,0,.12);
     border: 1px solid #d0d0d0;
+    margin-bottom: 165px;
 }
 
 .wide-label {
@@ -958,5 +959,143 @@ header.header.container {
 
     .wide-value {
         font-size: 26px;
+    }
+}
+
+
+
+/* ===== SECTION ===== */
+.library-images{
+    background: #010101ff;
+    border-radius: 66px 66px 0px 0px;
+}
+
+.landmark-section {
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+  
+}
+
+/* ===== CARD ===== */
+.landmark-card {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    background: #8a1538;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    top: -196px;
+    overflow: hidden;
+}
+
+/* ===== ARROW ===== */
+.nav-arrow {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* ===== IMAGE ===== */
+.landmark-image {
+    flex: 0 0 42%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.landmark-image img {
+    max-height: 460px;
+    width: auto;
+}
+
+/* ===== CONTENT ===== */
+.landmark-content {
+    flex: 1;
+    color: #fff;
+    padding-right: 40px;
+}
+
+.landmark-title {
+    font-size: 44px;
+    font-weight: 800;
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.landmark-title .dash {
+    width: 70px;
+    height: 6px;
+    background: #111;
+    border-radius: 3px;
+}
+
+.landmark-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    opacity: 0.95;
+    margin-bottom: 14px;
+    max-width: 520px;
+}
+
+/* ===== BUTTON ===== */
+.more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 18px;
+    padding: 12px 26px;
+    background: #1f1f1f;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.more-btn:hover {
+    background: #000;
+    transform: translateX(-3px);
+}
+
+.btn-arrow {
+    font-size: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .landmark-card {
+        flex-direction: column;
+        padding: 40px 24px;
+    }
+
+    .landmark-image {
+        order: 2;
+        margin-top: 30px;
+    }
+
+    .landmark-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .landmark-title {
+        justify-content: center;
+    }
+
+    .nav-arrow {
+        display: none;
     }
 }
