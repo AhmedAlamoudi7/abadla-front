@@ -310,6 +310,23 @@
             </div>
         </section>
   </div>
+</section>
+
+
+
+<section class="gallery-section">
+  <div class="gallery-wrapper">
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- الصور تُحقن هنا -->
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightboxImg">
+</div>
 
 
 
@@ -322,7 +339,11 @@
 
 
 
-<!-- VIDEO MODAL -->
+
+
+
+
+  <!-- VIDEO MODAL -->
 <div class="video-modal" id="videoModal">
     <div class="video-overlay"></div>
 
@@ -565,49 +586,122 @@
 
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".stat-number");
-    const speed = 120; // كلما قلّ الرقم زادت السرعة
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".stat-number");
+        const speed = 120; // كلما قلّ الرقم زادت السرعة
 
-    const formatNumber = (num) => {
-        return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    };
-
-    const runCounter = (counter) => {
-        const target = +counter.dataset.target;
-        let current = 0;
-
-        const increment = target / speed;
-
-        const update = () => {
-            current += increment;
-
-            if (current < target) {
-                counter.innerText = formatNumber(Math.floor(current));
-                requestAnimationFrame(update);
-            } else {
-                counter.innerText = formatNumber(target);
-            }
+        const formatNumber = (num) => {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         };
 
-        update();
-    };
+        const runCounter = (counter) => {
+            const target = +counter.dataset.target;
+            let current = 0;
 
-    /* Observer لتشغيل الأنيميشن عند الظهور */
-    const observer = new IntersectionObserver(
-        (entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    runCounter(entry.target);
-                    obs.unobserve(entry.target); // تشغيل مرة واحدة
+            const increment = target / speed;
+
+            const update = () => {
+                current += increment;
+
+                if (current < target) {
+                    counter.innerText = formatNumber(Math.floor(current));
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = formatNumber(target);
                 }
-            });
-        },
-        { threshold: 0.6 }
-    );
+            };
 
-    counters.forEach(counter => observer.observe(counter));
+            update();
+        };
+
+        /* Observer لتشغيل الأنيميشن عند الظهور */
+        const observer = new IntersectionObserver(
+            (entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        runCounter(entry.target);
+                        obs.unobserve(entry.target); // تشغيل مرة واحدة
+                    }
+                });
+            },
+            { threshold: 0.6 }
+        );
+
+        counters.forEach(counter => observer.observe(counter));
+    });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ================= DATA ================= */
+  const images = [
+    "img/lib-img.png",
+    "img/lib-img.png",
+    "img/lib-img.png",
+    "img/lib-img.png",
+    "img/lib-img.png",
+    "img/lib-img.png",
+    "img/lib-img.png"
+  ];
+
+  const grid = document.getElementById("galleryGrid");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeBtn = document.querySelector(".lightbox .close");
+
+  if (!grid) {
+    console.error("galleryGrid not found");
+    return;
+  }
+
+  /* ================= INSERT TEXT AS FIRST GRID CELL ================= */
+  const textCell = document.createElement("div");
+  textCell.className = "gallery-text grid-text";
+  textCell.innerHTML = `
+    <h2>تصفح<br>مكتبة الصور</h2>
+    <a class="gallery-more">مشاهدة المزيد</a>
+  `;
+  grid.appendChild(textCell);
+
+  /* ================= LOAD IMAGES ================= */
+  images.forEach((src, index) => {
+    const card = document.createElement("div");
+    card.className = "gallery-card";
+    card.style.animationDelay = `${(index + 1) * 0.12}s`;
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Gallery image";
+
+    card.appendChild(img);
+    grid.appendChild(card);
+
+    /* CLICK -> OPEN LIGHTBOX */
+    card.addEventListener("click", () => {
+      document
+        .querySelectorAll(".gallery-card")
+        .forEach(c => c.classList.remove("active"));
+
+      card.classList.add("active");
+      lightboxImg.src = src;
+      lightbox.classList.add("show");
+    });
+  });
+
+  /* ================= LIGHTBOX CLOSE ================= */
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.remove("show");
+  });
+
+  lightbox.addEventListener("click", e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove("show");
+    }
+  });
+
 });
 </script>
+
   </body>
 </html>
