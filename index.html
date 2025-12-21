@@ -330,7 +330,52 @@
 
 
 
+<section class="form-section">
+  <div class="form-box">
 
+    <!-- RIGHT SIDE -->
+    <div class="form-info">
+      <h2>أضف بياناتك</h2>
+      <p>يرجى تعبئة جميع البيانات صحيحة ومحدثة<br>لإضافتها لأرشيف العائلة</p>
+
+      <div class="type-buttons">
+        <button class="type-btn active">أفراد</button>
+        <button class="type-btn">عائلة</button>
+        <button class="type-btn">مغترب</button>
+        <button class="type-btn">أخرى</button>
+      </div>
+    </div>
+
+    <!-- LEFT SIDE -->
+    <form class="form-fields">
+
+      <div class="field">
+        <label>الاسم بالكامل <span>*</span></label>
+        <input type="text" placeholder="ادخل الاسم">
+      </div>
+
+      <div class="field">
+        <label>رقم الجوال <span>*</span></label>
+        <div class="phone-input">
+          <select>
+            <option>+970</option>
+            <option>+972</option>
+          </select>
+          <input type="tel" placeholder="00 000 0000">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>البريد الإلكتروني <span>*</span></label>
+        <input type="email" placeholder="ادخل البريد الإلكتروني">
+      </div>
+
+      <button type="submit" class="submit-btn">إرسال</button>
+
+    </form>
+
+  </div>
+</section>
 
 
 
@@ -632,76 +677,88 @@
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
 
-  /* ================= DATA ================= */
-  const images = [
-    "img/lib-img.png",
-    "img/lib-img.png",
-    "img/lib-img.png",
-    "img/lib-img.png",
-    "img/lib-img.png",
-    "img/lib-img.png",
-    "img/lib-img.png"
-  ];
+    /* ================= DATA ================= */
+    const images = [
+      "img/lib-img.png",
+      "img/lib-img.png",
+      "img/lib-img.png",
+      "img/lib-img.png",
+      "img/lib-img.png",
+      "img/lib-img.png",
+      "img/lib-img.png"
+    ];
 
-  const grid = document.getElementById("galleryGrid");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const closeBtn = document.querySelector(".lightbox .close");
+    const grid = document.getElementById("galleryGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const closeBtn = document.querySelector(".lightbox .close");
 
-  if (!grid) {
-    console.error("galleryGrid not found");
-    return;
-  }
-
-  /* ================= INSERT TEXT AS FIRST GRID CELL ================= */
-  const textCell = document.createElement("div");
-  textCell.className = "gallery-text grid-text";
-  textCell.innerHTML = `
-    <h2>تصفح<br>مكتبة الصور</h2>
-    <a class="gallery-more">مشاهدة المزيد</a>
-  `;
-  grid.appendChild(textCell);
-
-  /* ================= LOAD IMAGES ================= */
-  images.forEach((src, index) => {
-    const card = document.createElement("div");
-    card.className = "gallery-card";
-    card.style.animationDelay = `${(index + 1) * 0.12}s`;
-
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Gallery image";
-
-    card.appendChild(img);
-    grid.appendChild(card);
-
-    /* CLICK -> OPEN LIGHTBOX */
-    card.addEventListener("click", () => {
-      document
-        .querySelectorAll(".gallery-card")
-        .forEach(c => c.classList.remove("active"));
-
-      card.classList.add("active");
-      lightboxImg.src = src;
-      lightbox.classList.add("show");
-    });
-  });
-
-  /* ================= LIGHTBOX CLOSE ================= */
-  closeBtn.addEventListener("click", () => {
-    lightbox.classList.remove("show");
-  });
-
-  lightbox.addEventListener("click", e => {
-    if (e.target === lightbox) {
-      lightbox.classList.remove("show");
+    if (!grid) {
+      console.error("galleryGrid not found");
+      return;
     }
-  });
 
-});
+    /* ================= INSERT TEXT AS FIRST GRID CELL ================= */
+    const textCell = document.createElement("div");
+    textCell.className = "gallery-text grid-text";
+    textCell.innerHTML = `
+      <h2>تصفح<br>مكتبة الصور</h2>
+      <a class="gallery-more">مشاهدة المزيد</a>
+    `;
+    grid.appendChild(textCell);
+
+    /* ================= LOAD IMAGES ================= */
+    images.forEach((src, index) => {
+      const card = document.createElement("div");
+      card.className = "gallery-card";
+      card.style.animationDelay = `${(index + 1) * 0.12}s`;
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Gallery image";
+
+      card.appendChild(img);
+      grid.appendChild(card);
+
+      /* CLICK -> OPEN LIGHTBOX */
+      card.addEventListener("click", () => {
+        document
+          .querySelectorAll(".gallery-card")
+          .forEach(c => c.classList.remove("active"));
+
+        card.classList.add("active");
+        lightboxImg.src = src;
+        lightbox.classList.add("show");
+      });
+    });
+
+    /* ================= LIGHTBOX CLOSE ================= */
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+      }
+    });
+
+  });
 </script>
+
+<script>
+  const buttons = document.querySelectorAll(".type-btn");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+</script>
+
 
   </body>
 </html>
