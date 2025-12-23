@@ -1800,3 +1800,367 @@ header.header.container {
         text-align: center;
     }
 }
+/* ===================================================
+   RESPONSIVE ENHANCEMENT – MOBILE FIRST
+   =================================================== */
+
+/* ===================== GLOBAL ===================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ===================== HEADER ===================== */
+@media (max-width: 992px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .tools {
+    gap: 6px;
+  }
+
+  .search {
+    width: 140px;
+  }
+}
+
+/* ===================== HERO ===================== */
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 30px !important;
+  }
+
+  .hero-image {
+    height: 260px;
+    border-radius: 12px;
+  }
+
+  .date {
+    left: 12px;
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+/* ===================== BREAKING ===================== */
+@media (max-width: 768px) {
+  .breaking {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px !important;
+  }
+
+  .badge {
+    width: auto;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+/* ===================== EVENTS SLIDER ===================== */
+@media (max-width: 900px) {
+  .events-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .event-card {
+    min-width: 85%;
+    scroll-snap-align: center;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+/* ===================== FAMILY DESCRIPTION ===================== */
+@media (max-width: 900px) {
+  .family-desc-inner {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .family-title h2 {
+    max-width: 100%;
+    font-size: 30px;
+  }
+
+  .article-text {
+    font-size: 15px;
+  }
+}
+
+/* ===================== MEDIA SHOWCASE ===================== */
+@media (max-width: 900px) {
+  .media-wrapper {
+    flex-direction: column;
+  }
+
+  .media-head h3 {
+    font-size: 18px;
+  }
+
+  .video-box {
+    min-height: 200px;
+  }
+}
+
+/* ===================== ACTIVITIES ===================== */
+@media (max-width: 900px) {
+  .activites-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 40px 20px;
+  }
+
+  .activity-card {
+    min-width: 85%;
+    height: 420px;
+    scroll-snap-align: center;
+  }
+
+  .arrow-activty {
+    display: none;
+  }
+
+  .activity-info h3 {
+    font-size: 18px;
+  }
+}
+
+/* ===================== STATS ===================== */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-label {
+    font-size: 26px;
+  }
+
+  .stat-number {
+    font-size: 40px;
+  }
+
+  .wide-label {
+    font-size: 26px;
+  }
+}
+
+/* ===================== LANDMARK ===================== */
+@media (max-width: 992px) {
+  .landmark-card {
+    flex-direction: column;
+    top: 0;
+    padding: 30px 20px;
+  }
+
+  .landmark-image img {
+    max-height: 280px;
+  }
+
+  .landmark-content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .landmark-title {
+    justify-content: center;
+    font-size: 32px;
+  }
+
+  .nav-arrow {
+    display: none;
+  }
+}
+
+/* ===================== GALLERY ===================== */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .gallery-text.grid-text {
+    grid-column: span 2;
+    text-align: center;
+  }
+
+  .gallery-text h2 {
+    font-size: 28px;
+  }
+}
+
+/* ===================== FORM ===================== */
+@media (max-width: 900px) {
+  .form-box {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .form-info h2 {
+    font-size: 30px;
+  }
+}
+
+/* ===================== NEWS ===================== */
+@media (max-width: 900px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .news-image {
+    height: 180px;
+  }
+}
+
+/* ===================== NEWSLETTER ===================== */
+@media (max-width: 900px) {
+  .newsletter-wrapper {
+    flex-direction: column;
+    gap: 30px;
+    top: 0;
+  }
+
+  .newsletter-box {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .newsletter-content h2 {
+    font-size: 28px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
+
+/* ===================== FOOTER ===================== */
+@media (max-width: 900px) {
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+/* ================= EVENT CARD HOVER ================= */
+.event-card {
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  background: #222;
+  color: #fff;
+  transform: translateY(-6px);
+}
+
+.event-card:hover h3,
+.event-card:hover p,
+.event-card:hover .event-date {
+  color: #fff;
+}
+
+/* dark icon on hover */
+.event-card:hover .event-btn img {
+  content: url("img/arrow-left-dark.svg");
+}
+
+/* ================= ACTIVE (CLICKED) ================= */
+.event-card.active {
+  background: #222;
+  color: #fff;
+  outline: 3px solid #6a4cff;
+  transform: translateY(-8px);
+}
+
+.event-card.active h3,
+.event-card.active p,
+.event-card.active .event-date {
+  color: #fff;
+}
+
+.event-card.active .event-btn {
+  background: #fff;
+  color: #222;
+}
+
+.event-card.active .event-btn img {
+  content: url("img/arrow-left-dark.svg");
+}
+
+
+/* ================= ACTIVITY CARD INTERACTION ================= */
+.activity-card {
+  cursor: pointer;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* hover = arrow feeling */
+.activity-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  z-index: 4;
+}
+
+/* hover button effect */
+.activity-card:hover .activity-meta {
+  background: #6f102c;
+  transform: translateX(-4px);
+}
+
+/* ================= ACTIVE ================= */
+.activity-card.active {
+  transform: scale(1.08);
+  z-index: 5;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* inactive cards */
+.activity-card:not(.active) {
+  opacity: 0.85;
+}

@@ -77,14 +77,14 @@
       <div class="container">
         <!-- slider -->
         <div class="events-row">
-          <div class="event-card active dark">
+          <div class="event-card">
             <span class="event-date">2 - 12 ديسمبر 2023</span>
             <h3>خطة إعمار قطاع غزة</h3>
             <p>فندق المشتل . شارع الرشيد قطاع غزة</p>
             <img src="img/event1.jpg" />
-            <a class="event-btn dark"
+            <a class="event-btn"
               >مشاهدة المزيد
-              <img src="img/arrow-left-dark.svg" class="btn-icon"
+              <img src="img/arrow-left.svg" class="btn-icon"
             /></a>
           </div>
 
@@ -939,7 +939,28 @@
       });
     });
 </script>
+<script>
+  /* ================= EVENT CLICK ACTIVE ================= */
+  const eventCardsClick = document.querySelectorAll(".event-card");
 
+  eventCardsClick.forEach(card => {
+    card.addEventListener("click", () => {
+      eventCardsClick.forEach(c => c.classList.remove("active", "dark"));
+      card.classList.add("active", "dark");
+    });
+  });
+</script>
+<script>
+  /* ================= ACTIVITY CLICK ================= */
+  const activityCards = document.querySelectorAll(".activity-card");
 
+  activityCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      activityCards.forEach(c => c.classList.remove("active"));
+      card.classList.add("active");
+      current = index; // sync with arrows
+    });
+  });
+</script>
   </body>
 </html>
