@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>العبادلة - ألبوم الصور</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <img src="img/Group 126.png" class="top-ornament" alt="" />
+
+    <header class="header container" id="header">
+      <div class="header-right">
+        <nav class="nav" id="navMenu">
+          <a href="index.html">الرئيسية</a>
+          <a href="about.html">عن العائلة</a>
+          <a href="news.html">أخبار العائلة</a>
+          <a href="events.html">فعاليات</a>
+          <a href="social.html">إجتماعيات</a>
+          <a href="family-tree.html">شجرة العائلة</a>
+          <a href="personalities.html">شخصيات إعتبارية</a>
+          <a href="album.html" class="active">الألبوم</a>
+          <a href="informations.html">معلومات</a>
+        </nav>
+        <div class="tools">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input class="search" type="text" placeholder="ابحث هنا" id="siteSearch" autocomplete="off" />
+            <div class="search-dropdown" id="searchDropdown"></div>
+          </div>
+          <div class="lang-wrapper">
+            <button class="globe-btn" id="globeBtn" aria-label="اللغة">
+              <i class="fas fa-globe"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option active">
+                <i class="fas fa-check"></i>
+                <span>العربية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Breaking News -->
+    <div class="breaking container" data-animate="fade-up">
+      <span class="badge">آخر الأخبار</span>
+      <div class="breaking-wrapper">
+        <div class="breaking-track">
+          خبر عاجل ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن … خبر عاجل
+          ومهم الآن يحدث في قطاع غزة … اغتنم الفرصة الآن …
+        </div>
+      </div>
+    </div>
+
+    <!-- Album Hero -->
+    <section class="album-hero" data-animate="fade-up">
+      <h1>ألبوم الصور</h1>
+      <p>مجموعة من اللحظات التي وثّقتها عدسات تاريخ شاهدة على أجيال ارتبطت مع الزمن</p>
+    </section>
+
+    <!-- Album Grid -->
+    <section class="album-section container" data-animate="fade-up">
+      <div class="album-grid" id="albumGrid">
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">مناسبات عائلية</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">حفل تكريم</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="heritage">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">صور تراثية</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">لقاء العائلة</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="heritage">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">ذكريات قديمة</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="places">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">أماكن العائلة</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">أفراح ومباركات</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="places">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">الدار القديمة</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="heritage">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">وثائق تاريخية</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">حفل زفاف</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="places">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">المسجد القديم</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="heritage">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">مخطوطات</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="events">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">رمضانيات</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="heritage">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">صور الأجداد</span>
+          </div>
+        </div>
+        <div class="album-card" data-category="places">
+          <div class="album-thumb"><i class="fas fa-image"></i></div>
+          <div class="album-overlay">
+            <span class="album-caption">البيت الكبير</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="album-dots">
+        <span class="album-dot active"></span>
+        <span class="album-dot"></span>
+        <span class="album-dot"></span>
+        <span class="album-dot"></span>
+        <span class="album-dot"></span>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="album-lightbox" id="albumLightbox">
+      <button class="album-lb-close"><i class="fas fa-times"></i></button>
+      <button class="album-lb-arrow album-lb-prev"><i class="fas fa-chevron-right"></i></button>
+      <button class="album-lb-arrow album-lb-next"><i class="fas fa-chevron-left"></i></button>
+      <div class="album-lb-content">
+        <div class="album-lb-placeholder"><i class="fas fa-image"></i></div>
+        <p class="album-lb-caption" id="albumLbCaption"></p>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter-wrapper" data-animate="fade-up">
+      <div class="newsletter-box">
+        <div class="newsletter-content">
+          <h2>للاشتراك في النشرة البريدية</h2>
+          <p>ابقَ على اطلاع بأحدث الأخبار والتحديثات من خلال نشرتنا الإخبارية</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="أدخل بريدك الإلكتروني" />
+          <button type="submit">اشترك</button>
+        </form>
+      </div>
+      <div class="whatsapp-box">
+        <img src="img/Social-Icons.svg" alt="WhatsApp" />
+        <p>للانضمام في<br />مجموعة واتساب</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-box footer-links">
+          <h3>روابط تهمك</h3>
+          <div class="links-columns">
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">عن العائلة</a></li>
+              <li><a href="news.html">أخبار العائلة</a></li>
+              <li><a href="social.html">إجتماعيات</a></li>
+            </ul>
+            <ul>
+              <li><a href="family-tree.html">شجرة العائلة</a></li>
+              <li><a href="album.html">الألبوم</a></li>
+              <li><a href="informations.html">معلومات</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-box footer-contact">
+          <h3>للتواصل</h3>
+          <input type="text" placeholder="الاسم كامل" />
+          <div class="phone-input"><input type="text" placeholder="رقم الهاتف" /></div>
+        </div>
+        <div class="footer-box footer-message">
+          <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-x-twitter"></i>
+            <i class="fab fa-telegram"></i>
+          </div>
+          <textarea placeholder="اكتب رسالتك..."></textarea>
+          <button>إرسال</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>سياسة الخصوصية | الشروط والأحكام</span>
+        <span>جميع الحقوق محفوظة لعائلة العبادلة © 2025</span>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".album-card");
+      const lightbox = document.getElementById("albumLightbox");
+      const lbCaption = document.getElementById("albumLbCaption");
+      const lbClose = lightbox.querySelector(".album-lb-close");
+      const lbPrev = lightbox.querySelector(".album-lb-prev");
+      const lbNext = lightbox.querySelector(".album-lb-next");
+      let currentIdx = 0;
+      const cardArr = Array.from(cards);
+
+      function openLightbox(idx) {
+        currentIdx = idx;
+        const card = cardArr[idx];
+        const caption = card.querySelector(".album-caption");
+        lbCaption.textContent = caption ? caption.textContent : "";
+        lightbox.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("show");
+        document.body.style.overflow = "";
+      }
+
+      cardArr.forEach((card, i) => {
+        card.addEventListener("click", () => openLightbox(i));
+      });
+
+      lbClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      lbNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx + 1) % cardArr.length;
+        openLightbox(currentIdx);
+      });
+
+      lbPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentIdx = (currentIdx - 1 + cardArr.length) % cardArr.length;
+        openLightbox(currentIdx);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("show")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") { currentIdx = (currentIdx + 1) % cardArr.length; openLightbox(currentIdx); }
+        if (e.key === "ArrowRight") { currentIdx = (currentIdx - 1 + cardArr.length) % cardArr.length; openLightbox(currentIdx); }
+      });
+
+      const dots = document.querySelectorAll(".album-dot");
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          dots.forEach(d => d.classList.remove("active"));
+          dot.classList.add("active");
+        });
+      });
+
+      const grid = document.getElementById("albumGrid");
+      if (grid) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              Array.from(entry.target.children).forEach((child, i) => {
+                child.style.opacity = "0";
+                child.style.transform = "translateY(24px) scale(0.96)";
+                child.style.transition = `opacity 0.5s ease ${i * 0.06}s, transform 0.5s ease ${i * 0.06}s`;
+                requestAnimationFrame(() => {
+                  child.style.opacity = "1";
+                  child.style.transform = "translateY(0) scale(1)";
+                });
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        obs.observe(grid);
+      }
+    });
+    </script>
+  </body>
+</html>

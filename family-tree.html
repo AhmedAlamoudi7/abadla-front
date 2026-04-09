@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>العبادلة - شجرة العائلة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="tree.css" />
+  </head>
+  <body>
+
+    <img src="img/Group 126.png" class="top-ornament" alt="" />
+
+    <header class="header container" id="header">
+      <div class="header-right">
+        <nav class="nav" id="navMenu">
+          <a href="index.html">الرئيسية</a>
+          <a href="about.html">عن العائلة</a>
+          <a href="news.html">أخبار العائلة</a>
+          <a href="events.html">فعاليات</a>
+          <a href="social.html">إجتماعيات</a>
+          <a href="family-tree.html" class="active">شجرة العائلة</a>
+          <a href="personalities.html">شخصيات إعتبارية</a>
+          <a href="album.html">الألبوم</a>
+          <a href="informations.html">معلومات</a>
+        </nav>
+        <div class="tools">
+          <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input class="search" type="text" placeholder="ابحث هنا" id="siteSearch" autocomplete="off" />
+            <div class="search-dropdown" id="searchDropdown"></div>
+          </div>
+          <div class="lang-wrapper">
+            <button class="globe-btn" id="globeBtn" aria-label="اللغة">
+              <i class="fas fa-globe"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <div class="lang-option active">
+                <i class="fas fa-check"></i>
+                <span>العربية</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ===== TREE APP ===== -->
+    <div class="tree-app" data-animate="fade-up">
+
+      <!-- Hero Banner -->
+      <div class="tree-hero">
+        <div class="tree-hero-bg"></div>
+        <div class="tree-hero-content">
+          <div class="tree-hero-icon"><i class="fas fa-tree"></i></div>
+          <h1>عائلة العبادلة</h1>
+          <p>تصفح شجرة العائلة، ابحث عن أقاربك، واستكشف تاريخ وفروع العائلة</p>
+          <div class="tree-hero-stats">
+            <div class="tree-stat-pill">
+              <span class="tree-stat-num" data-target="2030">—</span>
+              <span class="tree-stat-lbl">فرد</span>
+            </div>
+            <div class="tree-stat-pill">
+              <span class="tree-stat-num" data-target="6">—</span>
+              <span class="tree-stat-lbl">فرع</span>
+            </div>
+            <div class="tree-stat-pill">
+              <i class="fas fa-flag" style="margin-left:6px"></i>
+              <span class="tree-stat-lbl">فلسطين والمهجر</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="tree-tabs">
+        <button class="tree-tab active" data-tab="tree"><i class="fas fa-sitemap"></i> مشجرة العائلة</button>
+        <button class="tree-tab" data-tab="members"><i class="fas fa-users"></i> أفراد العائلة</button>
+        <button class="tree-tab" data-tab="stats"><i class="fas fa-chart-bar"></i> إحصائيات</button>
+        <button class="tree-tab" data-tab="about"><i class="fas fa-book-open"></i> عن العائلة</button>
+      </div>
+
+      <!-- Main Layout -->
+      <div class="tree-layout">
+
+        <!-- Sidebar -->
+        <aside class="tree-sidebar" id="treeSidebar">
+          <div class="sidebar-section">
+            <h3><i class="fas fa-search"></i> اختر الفرع / بحث عن شخص</h3>
+          </div>
+
+          <div class="sidebar-section">
+            <h4><i class="fas fa-code-branch"></i> اختر الفرع</h4>
+            <div class="branch-list" id="branchList">
+              <button class="branch-item active" data-branch="all">
+                <i class="fas fa-tree"></i>
+                <span>كل الفروع</span>
+                <span class="branch-badge">2030</span>
+              </button>
+              <button class="branch-item" data-branch="mohammed">
+                <i class="fas fa-code-branch"></i>
+                <span>فرع محمد</span>
+                <span class="branch-badge">580</span>
+              </button>
+              <button class="branch-item" data-branch="ibrahim">
+                <i class="fas fa-code-branch"></i>
+                <span>فرع إبراهيم</span>
+                <span class="branch-badge">450</span>
+              </button>
+              <button class="branch-item" data-branch="ali">
+                <i class="fas fa-code-branch"></i>
+                <span>فرع علي</span>
+                <span class="branch-badge">320</span>
+              </button>
+              <button class="branch-item" data-branch="hussein">
+                <i class="fas fa-code-branch"></i>
+                <span>فرع حسين</span>
+                <span class="branch-badge">290</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h4><i class="fas fa-search"></i> بحث عن شخص</h4>
+            <div class="tree-search-box">
+              <input type="text" id="treeSearchInput" placeholder="اكتب الاسم..." />
+              <i class="fas fa-search"></i>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+            <button class="advanced-toggle" id="advancedToggle">
+              <i class="fas fa-chevron-down"></i> بحث متقدم (الأب + الجد)
+            </button>
+            <div class="advanced-fields" id="advancedFields">
+              <input type="text" id="fatherSearch" placeholder="اسم الأب" />
+              <input type="text" id="grandSearch" placeholder="اسم الجد" />
+            </div>
+          </div>
+
+          <div class="sidebar-tips">
+            <div class="tip"><i class="fas fa-lightbulb"></i> اضغط على شخص في الشجرة لعرض تفاصيله</div>
+            <div class="tip"><i class="fas fa-hand-pointer"></i> اضغط مرتين لطي/توسيع الفرع</div>
+            <div class="tip"><i class="fas fa-search"></i> استخدم البحث للعثور على شخص بالاسم</div>
+            <div class="tip"><i class="fas fa-keyboard"></i> Ctrl + عجلة الماوس للتكبير/التصغير</div>
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="tree-main">
+
+          <!-- Tab: Tree -->
+          <div class="tree-tab-content active" id="tabTree">
+            <!-- Toolbar -->
+            <div class="tree-toolbar">
+              <div class="toolbar-right">
+                <button class="tb-btn" id="tbZoomIn" title="تكبير"><i class="fas fa-plus"></i></button>
+                <button class="tb-btn" id="tbZoomOut" title="تصغير"><i class="fas fa-minus"></i></button>
+                <button class="tb-btn" id="tbReset" title="إعادة ضبط"><i class="fas fa-crosshairs"></i></button>
+                <span class="tb-zoom" id="tbZoomLabel">100%</span>
+              </div>
+              <div class="toolbar-left">
+                <button class="tb-btn" id="tbExpandAll" title="توسيع الكل"><i class="fas fa-expand-alt"></i> توسيع</button>
+                <button class="tb-btn" id="tbCollapseAll" title="طي الكل"><i class="fas fa-compress-alt"></i> طي</button>
+                <button class="tb-btn tb-sidebar-toggle" id="tbSidebarToggle"><i class="fas fa-bars"></i></button>
+              </div>
+            </div>
+
+            <!-- Tree Viewport -->
+            <div class="tree-viewport" id="treeViewport">
+              <div class="tree-canvas" id="treeCanvas">
+                <ul class="ftree" id="familyTree">
+                  <li>
+                    <div class="ftree-node ftree-root" data-name="الحاج عبدالله العبادلة" data-role="الجد المؤسس" data-year="1890 - 1975" data-bio="مؤسس العائلة ورجل ذو حكمة ورأي سديد، عُرف بكرمه وشجاعته وحبّه لأرضه وعائلته." data-branch="all">
+                      <div class="ftree-avatar ftree-avatar-root"><i class="fas fa-crown"></i></div>
+                      <span class="ftree-name">الحاج عبدالله</span>
+                      <span class="ftree-role">الجد المؤسس</span>
+                    </div>
+                    <ul>
+                      <!-- Branch: Mohammed -->
+                      <li data-branch="mohammed">
+                        <div class="ftree-node ftree-branch-head" data-name="محمد عبدالله العبادلة" data-role="الابن الأكبر – رأس فرع محمد" data-year="1920 - 2005" data-bio="قاد العائلة بعد والده واشتهر بعمله في التجارة وبناء المدارس. يُعد فرعه الأكبر عدداً.">
+                          <div class="ftree-avatar"><i class="fas fa-user-tie"></i></div>
+                          <span class="ftree-name">محمد</span>
+                          <span class="ftree-role">الابن الأكبر</span>
+                          <button class="ftree-toggle" aria-label="توسيع"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <ul class="ftree-collapsed">
+                          <li>
+                            <div class="ftree-node" data-name="أحمد محمد العبادلة" data-role="مهندس مدني" data-year="1955 -" data-bio="مهندس مدني بارز ساهم في بناء العديد من المشاريع في المنطقة.">
+                              <div class="ftree-avatar"><i class="fas fa-hard-hat"></i></div>
+                              <span class="ftree-name">أحمد</span>
+                              <span class="ftree-role">مهندس مدني</span>
+                              <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="ftree-collapsed">
+                              <li><div class="ftree-node ftree-leaf" data-name="يوسف أحمد العبادلة" data-role="طالب هندسة حاسوب" data-year="2002 -" data-bio="طالب متفوق يدرس هندسة الحاسوب."><div class="ftree-avatar"><i class="fas fa-user-graduate"></i></div><span class="ftree-name">يوسف</span></div></li>
+                              <li><div class="ftree-node ftree-leaf" data-name="سارة أحمد العبادلة" data-role="طبيبة أطفال" data-year="1998 -" data-bio="طبيبة متخصصة في طب الأطفال."><div class="ftree-avatar"><i class="fas fa-user-doctor"></i></div><span class="ftree-name">سارة</span></div></li>
+                              <li><div class="ftree-node ftree-leaf" data-name="محمود أحمد العبادلة" data-role="طالب ثانوية" data-year="2006 -" data-bio="طالب مجتهد في المرحلة الثانوية."><div class="ftree-avatar"><i class="fas fa-child"></i></div><span class="ftree-name">محمود</span></div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="ftree-node" data-name="خالد محمد العبادلة" data-role="أستاذ جامعي – دكتوراه" data-year="1960 -" data-bio="أستاذ في كلية العلوم، حاصل على الدكتوراه من جامعة القاهرة.">
+                              <div class="ftree-avatar"><i class="fas fa-chalkboard-teacher"></i></div>
+                              <span class="ftree-name">خالد</span>
+                              <span class="ftree-role">أستاذ جامعي</span>
+                              <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="ftree-collapsed">
+                              <li><div class="ftree-node ftree-leaf" data-name="عمر خالد العبادلة" data-role="مطور تطبيقات" data-year="1995 -" data-bio="مبرمج ومطور تطبيقات يعمل في شركة تقنية."><div class="ftree-avatar"><i class="fas fa-laptop-code"></i></div><span class="ftree-name">عمر</span></div></li>
+                              <li><div class="ftree-node ftree-leaf" data-name="نور خالد العبادلة" data-role="مصممة جرافيك" data-year="1999 -" data-bio="مصممة جرافيك مبدعة في مجال التصميم الرقمي."><div class="ftree-avatar"><i class="fas fa-palette"></i></div><span class="ftree-name">نور</span></div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="فاطمة محمد العبادلة" data-role="معلمة متقاعدة" data-year="1965 -" data-bio="معلمة قضت أكثر من 30 عاماً في خدمة التعليم.">
+                              <div class="ftree-avatar"><i class="fas fa-female"></i></div>
+                              <span class="ftree-name">فاطمة</span>
+                              <span class="ftree-role">معلمة</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <!-- Branch: Ibrahim -->
+                      <li data-branch="ibrahim">
+                        <div class="ftree-node ftree-branch-head" data-name="إبراهيم عبدالله العبادلة" data-role="الابن الثاني – رأس فرع إبراهيم" data-year="1925 - 2010" data-bio="تاجر معروف وأحد أعمدة المجتمع المحلي، أسس أول مكتبة في المنطقة.">
+                          <div class="ftree-avatar"><i class="fas fa-user-tie"></i></div>
+                          <span class="ftree-name">إبراهيم</span>
+                          <span class="ftree-role">الابن الثاني</span>
+                          <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <ul class="ftree-collapsed">
+                          <li>
+                            <div class="ftree-node" data-name="حسن إبراهيم العبادلة" data-role="طبيب جراح" data-year="1958 -" data-bio="طبيب جراح ذو خبرة واسعة في عدة مستشفيات.">
+                              <div class="ftree-avatar"><i class="fas fa-user-md"></i></div>
+                              <span class="ftree-name">حسن</span>
+                              <span class="ftree-role">طبيب جراح</span>
+                              <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="ftree-collapsed">
+                              <li><div class="ftree-node ftree-leaf" data-name="ليلى حسن العبادلة" data-role="صيدلانية" data-year="1990 -" data-bio="صيدلانية تدير صيدلية خاصة."><div class="ftree-avatar"><i class="fas fa-pills"></i></div><span class="ftree-name">ليلى</span></div></li>
+                              <li><div class="ftree-node ftree-leaf" data-name="كريم حسن العبادلة" data-role="محاسب قانوني" data-year="1993 -" data-bio="محاسب قانوني في شركة محاسبة كبرى."><div class="ftree-avatar"><i class="fas fa-calculator"></i></div><span class="ftree-name">كريم</span></div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="مريم إبراهيم العبادلة" data-role="ربة منزل" data-year="1962 -" data-bio="أم مثالية ربّت أبناءها على القيم الحميدة.">
+                              <div class="ftree-avatar"><i class="fas fa-female"></i></div>
+                              <span class="ftree-name">مريم</span>
+                              <span class="ftree-role">ربة منزل</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <!-- Branch: Ali -->
+                      <li data-branch="ali">
+                        <div class="ftree-node ftree-branch-head" data-name="علي عبدالله العبادلة" data-role="الابن الثالث – رأس فرع علي" data-year="1930 - 2018" data-bio="رجل دين ومعلم قرآن كريم، عُرف بتقواه وحبه للعلم.">
+                          <div class="ftree-avatar"><i class="fas fa-user-tie"></i></div>
+                          <span class="ftree-name">علي</span>
+                          <span class="ftree-role">الابن الثالث</span>
+                          <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <ul class="ftree-collapsed">
+                          <li>
+                            <div class="ftree-node" data-name="عبدالرحمن علي العبادلة" data-role="إمام وخطيب" data-year="1963 -" data-bio="إمام وخطيب مسجد الرحمة، حافظ للقرآن وعالم شرعي.">
+                              <div class="ftree-avatar"><i class="fas fa-mosque"></i></div>
+                              <span class="ftree-name">عبدالرحمن</span>
+                              <span class="ftree-role">إمام</span>
+                              <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                            </div>
+                            <ul class="ftree-collapsed">
+                              <li><div class="ftree-node ftree-leaf" data-name="أنس عبدالرحمن العبادلة" data-role="طالب شريعة" data-year="2000 -" data-bio="طالب شريعة حافظ للقرآن الكريم."><div class="ftree-avatar"><i class="fas fa-book-quran"></i></div><span class="ftree-name">أنس</span></div></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="زينب علي العبادلة" data-role="معلمة قرآن" data-year="1968 -" data-bio="معلمة قرآن متطوعة، أسّست حلقة تحفيظ للنساء.">
+                              <div class="ftree-avatar"><i class="fas fa-book-open"></i></div>
+                              <span class="ftree-name">زينب</span>
+                              <span class="ftree-role">معلمة قرآن</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+
+                      <!-- Branch: Hussein -->
+                      <li data-branch="hussein">
+                        <div class="ftree-node ftree-branch-head" data-name="حسين عبدالله العبادلة" data-role="الابن الرابع – رأس فرع حسين" data-year="1935 - 2020" data-bio="مزارع كبير وصاحب أراضٍ واسعة، أنشأ أول تعاونية زراعية.">
+                          <div class="ftree-avatar"><i class="fas fa-user-tie"></i></div>
+                          <span class="ftree-name">حسين</span>
+                          <span class="ftree-role">الابن الرابع</span>
+                          <button class="ftree-toggle"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <ul class="ftree-collapsed">
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="سعيد حسين العبادلة" data-role="مهندس زراعي" data-year="1970 -" data-bio="مهندس زراعي طوّر أساليب الري الحديثة.">
+                              <div class="ftree-avatar"><i class="fas fa-seedling"></i></div>
+                              <span class="ftree-name">سعيد</span>
+                              <span class="ftree-role">مهندس زراعي</span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="هدى حسين العبادلة" data-role="محامية" data-year="1975 -" data-bio="محامية ومستشارة قانونية تدافع عن حقوق المرأة.">
+                              <div class="ftree-avatar"><i class="fas fa-balance-scale"></i></div>
+                              <span class="ftree-name">هدى</span>
+                              <span class="ftree-role">محامية</span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="ftree-node ftree-leaf" data-name="ماجد حسين العبادلة" data-role="مدرّس رياضيات" data-year="1978 -" data-bio="معلم رياضيات محبوب في المدرسة الثانوية المحلية.">
+                              <div class="ftree-avatar"><i class="fas fa-square-root-variable"></i></div>
+                              <span class="ftree-name">ماجد</span>
+                              <span class="ftree-role">مدرّس</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab: Members -->
+          <div class="tree-tab-content" id="tabMembers">
+            <div class="members-grid" id="membersGrid"></div>
+          </div>
+
+          <!-- Tab: Stats -->
+          <div class="tree-tab-content" id="tabStats">
+            <div class="tree-stats-grid">
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-users"></i></div><h3>2,030</h3><p>إجمالي الأفراد</p></div>
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-code-branch"></i></div><h3>4</h3><p>فروع رئيسية</p></div>
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-layer-group"></i></div><h3>4</h3><p>أجيال موثّقة</p></div>
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-male"></i></div><h3>1,180</h3><p>ذكور</p></div>
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-female"></i></div><h3>850</h3><p>إناث</p></div>
+              <div class="ts-card"><div class="ts-icon"><i class="fas fa-globe-americas"></i></div><h3>8</h3><p>دول الانتشار</p></div>
+            </div>
+            <div class="ts-branches-chart">
+              <h3>توزيع الأفراد حسب الفروع</h3>
+              <div class="ts-bar-chart">
+                <div class="ts-bar"><span class="ts-bar-label">فرع محمد</span><div class="ts-bar-track"><div class="ts-bar-fill" style="--bar-w:100%"></div></div><span class="ts-bar-val">580</span></div>
+                <div class="ts-bar"><span class="ts-bar-label">فرع إبراهيم</span><div class="ts-bar-track"><div class="ts-bar-fill" style="--bar-w:78%"></div></div><span class="ts-bar-val">450</span></div>
+                <div class="ts-bar"><span class="ts-bar-label">فرع علي</span><div class="ts-bar-track"><div class="ts-bar-fill" style="--bar-w:55%"></div></div><span class="ts-bar-val">320</span></div>
+                <div class="ts-bar"><span class="ts-bar-label">فرع حسين</span><div class="ts-bar-track"><div class="ts-bar-fill" style="--bar-w:50%"></div></div><span class="ts-bar-val">290</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab: About -->
+          <div class="tree-tab-content" id="tabAbout">
+            <div class="tab-about-content">
+              <h2>عن شجرة عائلة العبادلة</h2>
+              <p>شجرة عائلة العبادلة تمتد عبر أجيال عديدة وتتفرع إلى أربعة فروع رئيسية يعود أصلها إلى الجد المؤسس الحاج عبدالله العبادلة (1890 - 1975).</p>
+              <p>تميّزت العائلة بروابطها المتينة بين أفرادها حيث يشكّل التعاون والاحترام والتكافل أساس العلاقات داخلها. وعلى مر السنوات برز العديد من أفراد العائلة في مجالات مختلفة مثل التعليم والتجارة والطب والهندسة والعمل المجتمعي.</p>
+              <p>نوثّق هنا هذه الفروع حفاظاً على التراث العائلي للأجيال القادمة، ونسعى لتحديث البيانات بشكل مستمر بمشاركة أفراد العائلة.</p>
+              <div class="about-features">
+                <div class="about-feat"><i class="fas fa-shield-alt"></i><h4>بيانات موثّقة</h4><p>جميع المعلومات مراجعة ومعتمدة من كبار العائلة</p></div>
+                <div class="about-feat"><i class="fas fa-sync-alt"></i><h4>تحديث مستمر</h4><p>يتم تحديث الشجرة بشكل دوري بإضافة الأفراد الجدد</p></div>
+                <div class="about-feat"><i class="fas fa-lock"></i><h4>خصوصية تامة</h4><p>نحافظ على خصوصية بيانات أفراد العائلة</p></div>
+              </div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+
+      <!-- Detail Panel -->
+      <div class="ftree-detail" id="ftreeDetail">
+        <button class="ftree-detail-close" id="ftreeDetailClose"><i class="fas fa-times"></i></button>
+        <div class="ftree-detail-avatar"><i class="fas fa-user" id="ftreeDetailIcon"></i></div>
+        <h3 id="ftreeDetailName"></h3>
+        <span class="ftree-detail-role" id="ftreeDetailRole"></span>
+        <span class="ftree-detail-year"><i class="fas fa-calendar-alt"></i> <span id="ftreeDetailYear"></span></span>
+        <p id="ftreeDetailBio"></p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top:40px">
+      <div class="footer-top">
+        <div class="footer-box footer-links">
+          <h3>روابط تهمك</h3>
+          <div class="links-columns">
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about.html">عن العائلة</a></li>
+              <li><a href="news.html">أخبار العائلة</a></li>
+              <li><a href="social.html">إجتماعيات</a></li>
+            </ul>
+            <ul>
+              <li><a href="family-tree.html">شجرة العائلة</a></li>
+              <li><a href="album.html">الألبوم</a></li>
+              <li><a href="informations.html">معلومات</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-box footer-contact">
+          <h3>للتواصل</h3>
+          <input type="text" placeholder="الاسم كامل" />
+          <div class="phone-input"><input type="text" placeholder="رقم الهاتف" /></div>
+        </div>
+        <div class="footer-box footer-message">
+          <div class="social-icons">
+            <i class="fab fa-facebook-f"></i><i class="fab fa-instagram"></i><i class="fab fa-youtube"></i><i class="fab fa-x-twitter"></i><i class="fab fa-telegram"></i>
+          </div>
+          <textarea placeholder="اكتب رسالتك..."></textarea>
+          <button>إرسال</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>سياسة الخصوصية | الشروط والأحكام</span>
+        <span>جميع الحقوق محفوظة لعائلة العبادلة © 2025</span>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="script.js"></script>
+    <script src="tree-app.js"></script>
+  </body>
+</html>
